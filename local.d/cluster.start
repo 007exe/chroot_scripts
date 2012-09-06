@@ -1,0 +1,3 @@
+#!/bin/bash
+/mnt/cluster/nodes/scripts/mount_chroot_dirs
+/mnt/cluster/nodes/scripts/run_chroot_ssh

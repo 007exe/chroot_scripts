@@ -1,0 +1,8 @@
+#!/bin/bash
+BASE_DIR=/mnt/cluster/nodes
+for i in $BASE_DIR/x86/* $BASE_DIR/x86_64/* ; do
+	if [ -f $i/usr/sbin/sshd ] ; then
+		echo Starting SSH in $i
+		chroot $i /usr/sbin/sshd
+	fi
+done

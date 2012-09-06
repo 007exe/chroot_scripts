@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Note: do not forget to change BASE_DIR according to your paths
+
+BASE_DIR=/mnt/cluster/nodes
+
+for i in $BASE_DIR/x86/* $BASE_DIR/x86_64/* ; do
+	mount -o bind /proc $i/proc
+	mount -o bind /sys $i/sys
+	mount -o bind /dev $i/dev
+	mount -o bind /dev/pts $i/dev/pts
+	mount -t tmpfs none $i/dev/shm
+done
+
+echo 131072 > /proc/sys/fs/file-max
+

@@ -1,4 +1,3 @@
-
 Scripts for chroot'ed build environments
 ========================================
 
@@ -17,7 +16,7 @@ How to use
 1. You need to set up ssh config manually in each environment you use. So, do next steps:
 * chroot into environment
 * edit /etc/ssh/sshd_config and change port number to some unique one
-* Run these command to initialize ssh keys: touch /lib/rc/init.d/softlevel ; rc-update -u ; rc-service sshd start
+* Run these command to initialize ssh keys (replace lib64 with lib, if environment is x86): rc-update -u ; touch /lib64/rc/init.d/softlevel  ; rc-service sshd start
 
 2. Add users and set passwords for everyone
 
